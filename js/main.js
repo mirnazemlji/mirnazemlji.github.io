@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+    // Navigation
     $('.scrolly').on('click', function(e) {
         e.preventDefault();
         
@@ -11,10 +12,11 @@ $(document).ready(function() {
         loadSection(target);
     });
 
-    loadSection('#tm-section-1');   // default
+    // Load default section
+    loadSection('#tm-section-1');
 
     function loadSection(sectionId) {
-        $('#main-content').html('<div class="loading">Loading...</div>');
+        $('#main-content').html('<p style="padding:40px;">Loading...</p>');
 
         let fileName = '';
 
@@ -33,12 +35,11 @@ $(document).ready(function() {
             })
             .fail(function() {
                 $('#main-content').html(`
-                    <p style="color:red; padding:30px;">
-                        Error loading ${fileName}<br><br>
-                        Check that the file exists in the <strong>sections/</strong> folder.
+                    <p style="color: red; padding: 40px;">
+                        Error: Could not load <strong>${fileName}</strong><br><br>
+                        Make sure the file exists in the <code>sections/</code> folder.
                     </p>
                 `);
             });
     }
-
 });

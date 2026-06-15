@@ -4,6 +4,24 @@
                 <p class="tm-copyright-text"> 
                             Copyright &copy; 2018 Constructive Co. Ltd., adapted by Mirna Džamonja 2024–2026. 
         Website restructuring assisted by Grok (built by xAI).
+<br>
+    Last updated: <span id="last-updated"></span>
+</p>
+
+<script>
+    // Hardcode timezone to Central European Time (Paris/Zagreb)
+    const options = { 
+        timeZone: 'Europe/Paris',
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+    };
+    document.getElementById('last-updated').textContent = 
+        new Date().toLocaleString('en-GB', options) + " (CET/CEST)";
+</script>
+                            
     </p>
 </footer>
                             
